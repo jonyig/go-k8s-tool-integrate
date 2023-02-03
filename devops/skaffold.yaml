@@ -1,0 +1,13 @@
+apiVersion: skaffold/v1beta17
+kind: Config
+metadata:
+  name: go-skaffold
+build:
+  artifacts:
+  - image: jonny/go-skaffold
+    docker:
+      dockerfile: devops/dev.Dockerfile
+deploy:
+  kubectl:
+    manifests:
+    - devops/k8s-pod.yaml
