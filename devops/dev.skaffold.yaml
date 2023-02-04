@@ -6,7 +6,7 @@ build:
   artifacts:
   - image: jonny/go-skaffold
     docker:
-      dockerfile: devops/Dockerfile
+      dockerfile: devops/dev.Dockerfile
 deploy:
   kubectl:
     manifests:
