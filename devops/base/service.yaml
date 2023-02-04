@@ -6,8 +6,10 @@ spec:
   selector:
   ports:
     - protocol: TCP
+      name: api-port
       port: 8001
       targetPort: 8001
     - protocol: TCP
       port: 56268
+      name: debug-listen
       targetPort: 56268
