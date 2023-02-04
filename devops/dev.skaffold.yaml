@@ -8,6 +8,6 @@ build:
     docker:
       dockerfile: devops/dev.Dockerfile
 deploy:
-  kubectl:
-    manifests:
-    - devops/base/pod.yaml
+  kustomize:
+    paths:
+      - devops/

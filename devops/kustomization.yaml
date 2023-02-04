@@ -1,12 +1,14 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 metadata:
-  name: jonny-app
+  name: app
+
+namePrefix: test-
+nameSuffix: -jonny
 
 commonLabels:
-  app: jonny-app
+  app: app
 
 resources:
   - ./base/deployment.yaml
   - ./base/service.yaml
-#  - configMap.yaml

@@ -1,10 +1,13 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: jonny-app-service
+  name: app-service
 spec:
   selector:
   ports:
     - protocol: TCP
       port: 8001
       targetPort: 8001
+    - protocol: TCP
+      port: 56268
+      targetPort: 56268

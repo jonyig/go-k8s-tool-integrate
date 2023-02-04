@@ -14,4 +14,4 @@ COPY --from=build /go/bin/dlv .
 
 ENV GOTRACEBACK=all
 
-ENTRYPOINT ["./dlv","--listen=:2345", "--headless=true", "--api-version=2", "--accept-multiclient","exec","./app"]
+ENTRYPOINT ["./dlv","--listen=:56268", "--headless=true", "--api-version=2", "--accept-multiclient","exec","./app"]
