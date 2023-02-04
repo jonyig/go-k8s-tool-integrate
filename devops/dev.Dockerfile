@@ -10,8 +10,8 @@ COPY --from=build /app .
 
 EXPOSE 8001 56268
 
-COPY --from=build /go/bin/dlv /
+COPY --from=build /go/bin/dlv .
 
 ENV GOTRACEBACK=all
 
-ENTRYPOINT ["./app"]
+ENTRYPOINT ["./dlv","--listen=:2345", "--headless=true", "--api-version=2", "--accept-multiclient","exec","./app"]
