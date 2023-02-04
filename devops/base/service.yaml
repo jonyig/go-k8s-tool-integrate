@@ -1,0 +1,10 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: jonny-app-service
+spec:
+  selector:
+  ports:
+    - protocol: TCP
+      port: 8001
+      targetPort: 8001

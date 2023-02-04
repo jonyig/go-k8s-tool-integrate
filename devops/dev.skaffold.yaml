@@ -10,4 +10,4 @@ build:
 deploy:
   kubectl:
     manifests:
-    - devops/k8s-pod.yaml
+    - devops/base/pod.yaml
