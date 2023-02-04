@@ -1,9 +1,0 @@
-apiVersion: v1
-kind: Pod
-metadata:
-  name: go-skaffold
-spec:
-  containers:
-    - name: go-skaffold
-      image: jonny/go-skaffold
-      imagePullPolicy: IfNotPresent
