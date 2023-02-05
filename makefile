@@ -11,7 +11,18 @@ skaffold-run:
 	skaffold run -f devops/skaffold.yaml
 skaffold-delete:
 	skaffold delete -f devops/skaffold.yaml
+
+s-reset: skaffold-delete skaffold-run
 skaffold-dev-run:
 	skaffold run -f devops/dev.skaffold.yaml
 skaffold-dev-delete:
 	skaffold delete -f devops/dev.skaffold.yaml
+
+t-list:
+	telepresence list
+
+t-intercept:
+	telepresence intercept test-deployment-app-jonny --port=8002:8001
+
+t-leave:
+	telepresence leave test-deployment-app-jonny
