@@ -5,7 +5,7 @@ run:
 	go build -o ./bin/app .
 	./bin/app
 dlv:
-	 go build -o ./bin/$(APP) -gcflags "all=-N -l"
+	 go build -o ./bin/$(APP) -gcflags "-N -l"
 	/Users/jonny/go/bin/dlv $(dlv) exec ./bin/$(APP)
 skaffold-run:
 	skaffold run -f devops/skaffold.yaml
