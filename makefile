@@ -1,12 +1,12 @@
 APP=app
-dlv=--listen=:2345 --headless=true --api-version=2 --accept-multiclient
+dlv-cmd=--listen=:2345 --headless=true --api-version=2 --accept-multiclient
 
 run:
 	go build -o ./bin/app .
 	./bin/app
 dlv:
 	 go build -o ./bin/$(APP) -gcflags "-N -l"
-	/Users/jonny/go/bin/dlv $(dlv) exec ./bin/$(APP)
+	/Users/jonny/go/bin/dlv $(dlv-cmd) exec ./bin/$(APP)
 skaffold-run:
 	skaffold run -f devops/skaffold.yaml
 skaffold-delete:

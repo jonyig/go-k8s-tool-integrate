@@ -1,9 +1,11 @@
 package routes
 
 import (
-	"github.com/gin-gonic/gin"
+	"fmt"
 	"log"
 	"net/http"
+
+	"github.com/gin-gonic/gin"
 )
 
 func Routes(route *gin.Engine) {
@@ -15,11 +17,27 @@ func Routes(route *gin.Engine) {
 	route.GET("/test", Test)
 }
 
+type TestStruct struct {
+	name string
+	age  int
+	note string
+}
+
+func (s *TestStruct) TestFn() string {
+	return fmt.Sprintf("%s,%d,%s", s.name, s.age, s.note)
+}
+
+func test1(test *TestStruct) {
+	log.Println(test.TestFn())
+}
 func Test(c *gin.Context) {
-	log.Print(123223)
-	log.Print(123223333)
+	test := &TestStruct{
+		name: "jonny",
+		age:  27,
+	}
+	test1(test)
 	c.JSON(
 		200,
-		223,
+		test,
 	)
 }
